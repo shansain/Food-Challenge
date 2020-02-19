@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00509fec-94e4-4ecf-8869-38fbab935aed" name="Default Changelist" comment="" />
+    <list default="true" id="00509fec-94e4-4ecf-8869-38fbab935aed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +58,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../start" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -108,18 +113,33 @@
       <option name="presentableId" value="Default" />
       <updated>1581866090186</updated>
       <workItem from="1581866091575" duration="23864000" />
-      <workItem from="1582020698292" duration="20912000" />
+      <workItem from="1582020698292" duration="21621000" />
     </task>
+    <task id="LOCAL‎00001" summary="mmm">
+      <created>1582110311881</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1582110311881</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="mmm" />
+    <option name="LAST_COMMIT_MESSAGE" value="mmm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582043825690">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1582043825690" />
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1582110309878">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582110309878" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1581946455091">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -144,6 +164,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1581866257963" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1582110330067">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1582110330067" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1582021726967">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
