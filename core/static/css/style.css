@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+
+body,html {
+    margin:0;
+    padding:0;
+    background: #c6aca0;
+
+}
+.navbar-light .navbar-brand{
+    color:#814c31;
+}
+.navbar-light .nav-item .nav-link{
+    color:#814c31;
+}
+.homePage{
+
+}
+.containers{
+    min-height: calc(100vh - 57px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header{
+    font-family: 'Zilla Slab', serif;
+    color: #814c31;
+
+}
+.btn-home{
+    margin-bottom:0.5rem;
+    background: #814c31;
+    border: #814c31;
+    color: white;
+}
+.btn-home:hover{
+    opacity: 0.8;
+}
+.col-sm{
+    border: #435f54 solid 1px;
+}
+.card-title{
+    color: #435f54;
+}
+.card-text{
+    color: #814c31;
+}
+.card-link{
+    color: rgba(0,0,0,.5);
+}
+
+

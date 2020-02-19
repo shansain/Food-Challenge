@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="searchPage">
+        <div class="containers">
+            {% for c in object_list %}
+                <h2>{{ c.name }}</h2>
+                <p>Difficulty: {{ c.get_level_display }}</p>
+                <p>{{ c.description }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

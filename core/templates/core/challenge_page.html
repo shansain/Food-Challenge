@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="challengePage">
+        <div class="containers">
+
+                <h2>{{ object.name }}</h2>
+                <p>Difficulty: {{ object.get_level_display }}</p>
+                <p>{{ object.description }}</p>
+
+    </div>
+{% endblock %}
