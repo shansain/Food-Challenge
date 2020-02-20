@@ -10,11 +10,11 @@ body, html {
 }
 
 .navbar-light .navbar-brand {
-    color: #814c31;
+    color: #591202;
 }
 
 .navbar-light .nav-item .nav-link {
-    color: #814c31;
+    color: #331f14;
 }
 
 .homePage {
@@ -23,7 +23,6 @@ body, html {
 
 .containers {
     min-height: calc(100vh - 57px);
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,14 +31,14 @@ body, html {
 
 .header {
     font-family: 'Zilla Slab', serif;
-    color: #814c31;
+    color: #591202;
 
 }
 
 .btn-home {
     margin-bottom: 0.5rem;
-    background: #814c31;
-    border: #814c31;
+    background: #591202;
+    border: #591202;
     color: white;
 }
 
@@ -47,13 +46,13 @@ body, html {
     opacity: 0.8;
 }
 
-.containers > .row {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+.kill-margin {
+    margin-right: 0 ;
+    margin-left: 0;
 }
 
 .col-sm {
-    border: #435f54 solid 1px;
+    border: #331f14 solid 1px;
     padding: 0;
     background: #e0dede;
 
@@ -64,15 +63,15 @@ body, html {
 }
 
 .card-title {
-    color: #435f54;
+    color: #cd8965;
 }
 
 .card-text {
-    color: #814c31;
+    color: #331f14;
 }
 
 .card-link {
-    color: rgba(0, 0, 0, .5);
+    color: #591202;
 }
 
 .description {
