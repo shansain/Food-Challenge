@@ -6,7 +6,7 @@
             {% for c in object_list %}
                 <h2>{{ c.name }}</h2>
                 <p>Difficulty: {{ c.get_level_display }}</p>
-                <p>{{ c.description }}</p>
+                <p class="description">{{ c.description }}</p>
             {% endfor %}
         </div>
     </div>

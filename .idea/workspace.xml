@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00509fec-94e4-4ecf-8869-38fbab935aed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9a50173-f9c9-4459-8195-d175067defca.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9a50173-f9c9-4459-8195-d175067defca.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/core/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/core/challenge_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/challenge_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/core/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodchallenge/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodchallenge/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodchallenge/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodchallenge/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../start" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -102,6 +108,18 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -113,7 +131,8 @@
       <option name="presentableId" value="Default" />
       <updated>1581866090186</updated>
       <workItem from="1581866091575" duration="23864000" />
-      <workItem from="1582020698292" duration="21621000" />
+      <workItem from="1582020698292" duration="23909000" />
+      <workItem from="1582115533309" duration="8014000" />
     </task>
     <task id="LOCAL‎00001" summary="mmm">
       <created>1582110311881</created>
@@ -144,30 +163,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1581946455091" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1582105457939">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1582117651499">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582105457939" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1582105457938">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582117651499" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1582117651499">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582105457938" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1582105457938">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582117651499" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1582117651498">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582105457938" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1582105457939">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582117651498" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1582117651499">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582105457939" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1581866257963">
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582117651499" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1582115462882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1581866257963" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1582115462882" />
     <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1582110330067">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1582110330067" />
+    <state x="337" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1582115493537">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="337" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1582115493537" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1582021726967">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
