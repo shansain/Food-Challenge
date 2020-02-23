@@ -6,7 +6,6 @@ body, html {
     margin: 0;
     padding: 0;
     background: #c6aca0;
-
 }
 
 .navbar-light .navbar-brand {
@@ -35,19 +34,22 @@ body, html {
 
 }
 
+
 .btn-home {
     margin-bottom: 0.5rem;
     background: #591202;
     border: #591202;
-    color: white;
+    color: #e0dede;
 }
 
 .btn-home:hover {
     opacity: 0.8;
+    background: #e0dede;
+    color: #591202;
 }
 
 .kill-margin {
-    margin-right: 0 ;
+    margin-right: 0;
     margin-left: 0;
 }
 

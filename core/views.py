@@ -1,9 +1,11 @@
 from django.contrib import auth
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
+from django.urls import reverse
 
 from .forms import SignUpForm
 from .models import Challenge
@@ -14,14 +16,14 @@ def home(request):
     d = {'object_list': c}
     return render(request, 'core/home.html', d)
 
-
+@login_required
 def search(request):
     q = request.GET.get('q')
     c = Challenge.objects.filter(Q(name__icontains=q) | Q(summary__icontains=q) | Q(description__icontains=q))
     context = {'object_list': c}
     return render(request, 'core/search.html', context)
 
-
+@login_required
 def select(request, challenge_id):
     c = Challenge.objects.get(id=challenge_id)
     context = {'object': c}
@@ -41,6 +43,7 @@ def signup(request):
             user.set_password(data['password'])
             user.save()
             login(request, user)
+            return redirect(reverse('home'))
     else:
         form = SignUpForm
     return render(request, 'registration/signup.html', {'form': form})

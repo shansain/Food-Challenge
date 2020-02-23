@@ -1,4 +1,11 @@
 {% extends 'core/base.html' %}
 {% block content %}
+    <div class="containers">
+    <form method="post">
+    {% csrf_token %}
     {{ form }}
+       <button type="submit" class="btn btn-login">SUBMIT</button>
+       <a class="btn btn-signup "href="{% url 'signup' %}">SIGNUP</a>
+    </form>
+    </div>
 {% endblock %}
