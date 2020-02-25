@@ -16,10 +16,6 @@ body, html {
     color: #331f14;
 }
 
-.homePage {
-
-}
-
 .containers {
     min-height: calc(100vh - 57px);
     display: flex;
@@ -53,15 +49,10 @@ body, html {
     margin-left: 0;
 }
 
-.col-sm {
+.col-6 {
     border: #331f14 solid 1px;
     padding: 0;
     background: #e0dede;
-
-}
-
-.card {
-
 }
 
 .card-title {
@@ -79,3 +70,22 @@ body, html {
 .description {
     width: 50vw;
 }
+
+
+@media only screen and (min-width: 576px) {
+    .card-deck {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .card-deck {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+}
+

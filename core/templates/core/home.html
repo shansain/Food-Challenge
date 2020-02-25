@@ -2,33 +2,31 @@
 
 {% block content %}
     <div class="homePage">
-        <div class="containers">
-            <div class="header">
-                <h1>Food Challenge</h1>
+    <div class="containers">
+        <div class="header">
+            <h1>Food Challenge</h1>
+        </div>
+        <form class="form-inline" action="{% url 'search' %}">
+            <div class="form-group mb-2">
+                <label for="search" class="sr-only">Keyword</label>
+                <input type="search" class="form-control" id="search" name="q">
             </div>
-            <form class="form-inline" action="{% url 'search' %}">
-                <div class="form-group mb-2">
-                    <label for="search" class="sr-only">Keyword</label>
-                    <input type="search" class="form-control" id="search" name="q">
+
+            <button class="btn btn-home" type="submit">Search</button>
+        </form>
+
+        {#            <div class="row kill-margin ">#}
+        <div class="card-deck kill-margin">
+            {% for c in object_list %}
+                <div class="card col-sm-12 col-md-6 col-lg-6">
+                <div class="card-body">
+                    <h5 class="card-title">{{ c.name }}</h5>
+                    <p class="card-text">{{ c.summary }}.</p>
+                    <p class="card-text"><small class="text-muted">Difficulty: {{ c.get_level_display }}</small></p>
+                    <a href="{% url 'select' c.id %}" class="card-link">for more </a>
                 </div>
-
-                <button class="btn btn-home" type="submit">Search</button>
-            </form>
-
-            <div class="row kill-margin" >
-                {% for c in object_list %}
-
-                        <div class="col-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ c.name }}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Difficulty: {{ c.get_level_display }}</h6>
-                                <p class="card-text">{{ c.summary }}</p>
-                                <a href="{% url 'select' c.id  %}" class="card-link">for more ditels</a>
-                            </div>
-
-                        </div>
-
-                {% endfor %}
+                </div>
+            {% endfor %}
             </div>
 
         </div>
