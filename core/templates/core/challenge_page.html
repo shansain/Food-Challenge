@@ -16,12 +16,10 @@
                     <p>you already in challenge</p>
                 {% endif %}
             {% else %}
-
-                <a>please signup</a>
+                <a>If you want to start the challenge please click on</a>
+                <a class="btn btn-login" href="{% url 'login' %}">LOGIN</a><a> if you are not registered click on</a>
                 <a class="btn btn-signup " href="{% url 'client_create' %}">SIGNUP </a>
-                <a>or login</a>
-                <a class="btn btn-login" href="{% url 'login' %}">LOGIN</a>
-
             {% endif %}
         </div>
+    </div>
 {% endblock %}

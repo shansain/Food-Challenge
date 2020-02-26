@@ -29,7 +29,9 @@ body, html {
     color: #591202;
 
 }
-
+.form-control{
+    background:#e0dede ;
+}
 
 .btn-home {
     margin-bottom: 0.5rem;
@@ -49,8 +51,7 @@ body, html {
     margin-left: 0;
 }
 
-.col-6 {
-    border: #331f14 solid 1px;
+.card {
     padding: 0;
     background: #e0dede;
 }
@@ -70,7 +71,9 @@ body, html {
 .description {
     width: 50vw;
 }
-
+.card:hover{
+    box-shadow: 5px 5px #cd8965;
+}
 
 @media only screen and (min-width: 576px) {
     .card-deck {
@@ -78,14 +81,18 @@ body, html {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        width: 100vw;
     }
+    .card-deck .card{
+    margin-bottom: 15px;
 }
-@media only screen and (min-width: 768px) {
-    .card-deck {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-    }
 }
+/*@media only screen and (min-width: 768px) {*/
+/*    .card-deck {*/
+/*        display: flex;*/
+/*        justify-content: center;*/
+/*        align-items: center;*/
+/*        flex-direction: row;*/
+/*    }*/
+/*}*/
 

@@ -11,7 +11,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">FoodCallenge</a>
+    <a class="navbar-brand" href="{% url 'home' %}">FoodChallenge</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,24 +21,31 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
             </li>
+            {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="{% url 'profile' user %}">My Profile</a>
             </li>
+            {% endif %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
+                    Challenges
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    {% for challenge in challenge_list %}
+                    <a class="dropdown-item" href="{% url 'select' forloop.counter %}">{{ challenge }}</a>
+                    {% endfor %}
                 </div>
             </li>
             {% if user.is_authenticated %}
-             <li class="nav-item logout">
-                <a class="nav-link" href="{% url 'logout' %}">logout</a>
-            </li>
+                <li class="nav-item logout">
+                    <a class="nav-link" href="{% url 'logout' %}">logout</a>
+                </li>
+            {% endif %}
+            {% if not user.is_authenticated %}
+                <li class="nav-item login">
+                    <a class="nav-link" href="{% url 'login' %}">login</a>
+                </li>
             {% endif %}
         </ul>
     </div>

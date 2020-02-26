@@ -24,17 +24,12 @@ def home(request):
 
 
 # @login_required
-def search(request):
+def search(request, challenge_id):
     q = request.GET.get('q')
     c = Challenge.objects.filter(Q(name__icontains=q) | Q(summary__icontains=q) | Q(description__icontains=q))
-    context = {'object_list': c}
-    return render(request, 'core/search.html', context)
-
-
-# @login_required
-def select(request, challenge_id):
-    c = Challenge.objects.get(id=challenge_id)
-    in_challenge = UserInChallenge.objects.filter(
+    in_challenge = False
+    if request.user.is_authenticated:
+        in_challenge = UserInChallenge.objects.filter(
             client=request.user.client,
             challenge_id=challenge_id
         ).exists()
@@ -44,8 +39,38 @@ def select(request, challenge_id):
             challenge_id=challenge_id
         )
         in_challenge = True
-    context = {'object': c, 'in_challenge': in_challenge}
+    context = {'object_list': c, 'in_challenge': in_challenge}
+    return render(request, 'core/search.html', context)
+
+
+# @login_required
+def select(request, challenge_id):
+    c = Challenge.objects.get(id=challenge_id)
+    in_challenge = False
+    if request.user.is_authenticated:
+        in_challenge = UserInChallenge.objects.filter(
+            client=request.user.client,
+            challenge_id=challenge_id
+        ).exists()
+    if request.method == 'POST':
+        UserInChallenge.objects.create(
+            client=request.user.client,
+            challenge_id=challenge_id
+        )
+        in_challenge = True
+    challenge_list = [
+        "Chinese food challenge",
+        "Vegan Instant",
+        "Food Diggers",
+        "Indian food challenge",
+        "Special challenge for a limited time",
+        "Jerusalem Challenge",
+        "The Shawarma Challenge",
+    ]
+    context = {'object': c, 'in_challenge': in_challenge, 'challenge_list': challenge_list}
     return render(request, 'core/challenge_page.html', context)
+
+
 
 
 class NoneLoginPermitted(AccessMixin):
@@ -58,7 +83,7 @@ class NoneLoginPermitted(AccessMixin):
 class SignUpClientView(NoneLoginPermitted, FormView):
     template_name = 'registration/signup_client.html'
     form_class = SignUpClientForm
-    success_url = reverse_lazy('core:search')
+    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         data = form.cleaned_data
@@ -78,7 +103,7 @@ class SignUpClientView(NoneLoginPermitted, FormView):
 class SignUpBusinessView(FormView):
     template_name = 'registration/signup_business.html'
     form_class = SignUpBusinessForm
-    success_url = reverse_lazy('core:search')
+    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         data = form.cleaned_data
@@ -89,26 +114,22 @@ class SignUpBusinessView(FormView):
         )
         user.set_password(data['password'])
         user.save()
-        # treatments_qs = TreatmentType.objects.filter(name__contains=data['treatments'])
-        print(data['treatments'])
         business = Business.objects.create(
             user=user,
-            phone=data['phone'],
+
             location=data['location'],
             description=data['description'],
             start_hour=data['start_hour'],
             end_hour=data['end_hour']
         )
-        business.treatments.set(data['treatments']),
         business.days.set(data['days']),
         business.save()
         login(self.request, user)
         return super(SignUpBusinessView, self).form_valid(form)
 
 
-
-
-
+def profile(request, client):
+    return render(request, 'core/fixed_profile.html', {'client': client})
 
 
 def admin_page(request):

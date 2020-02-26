@@ -7,12 +7,25 @@
                 <h2>{{ c.name }}</h2>
                 <p>Difficulty: {{ c.get_level_display }}</p>
                 <p class="description">{{ c.description }}</p>
-                 {% if user.is_authenticated %}
-                <form action="/" method="post">
-                    {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" value="START">
-                </form>
+                {% if user.is_authenticated %}
+                    {% if not in_challenge %}
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="START">
+                        </form>
+                    {% else %}
+                        <p>you already in challenge</p>
+                    {% endif %}
+                {% else %}
+                    <a>If you want to start the challenge please click on</a>
+                    <a class="btn btn-login" href="{% url 'login' %}">LOGIN</a>
+                    <a> if you are not registered click on</a>
+                    <a class="btn btn-signup " href="{% url 'client_create' %}">SIGNUP </a>
+                    {#                <a>please signup</a>#}
+                    {#                <a class="btn btn-signup " href="{% url 'client_create' %}">SIGNUP </a>#}
+                    {#                <a>or login</a>#}
+                    {#                <a class="btn btn-login" href="{% url 'login' %}">LOGIN</a>#}
+
                 {% endif %}
             {% endfor %}
         </div>
