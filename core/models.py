@@ -50,7 +50,7 @@ class Client(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='client')
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
 
 class UserInChallenge(models.Model):

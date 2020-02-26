@@ -1,12 +1,14 @@
 {% extends 'core/base.html' %}
 {% block content %}
-    <div class="containers">
+    <div class="containers" xmlns="http://www.w3.org/1999/html">
     <form method="post">
         {% csrf_token %}
         {{ form.as_p}}
         <button type="submit" class="btn btn-success">
             SAVE
         </button>
+        <a class="btn btn-signup"  href="{% url 'business_create' %}">signup as a business</a>
+
     </form>
     </div>
 {% endblock %}

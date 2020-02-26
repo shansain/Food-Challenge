@@ -1,11 +1,12 @@
 {% extends 'core/base.html' %}
 {% block content %}
     <div class="containers">
-    <form method="post">
-    {% csrf_token %}
-    {{ form }}
-       <button type="submit" class="btn btn-login">SUBMIT</button>
-       <a class="btn btn-signup "href="{% url 'signup' %}">SIGNUP</a>
-    </form>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-login">SUBMIT</button>
+            <a class="btn btn-signup " href="{% url 'client_create' %}">SIGNUP </a>
+            <a class="btn btn-signup" href="{% url 'business_create' %}">signup as a business</a>
+        </form>
     </div>
 {% endblock %}

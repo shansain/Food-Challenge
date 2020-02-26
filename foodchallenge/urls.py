@@ -8,8 +8,7 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('select/<int:challenge_id>/', views.select, name='select'),
     path('admin/', admin.site.urls),
-    path('businessSignUp/', SignUpBusinessView.as_view(), name="business-create"),
-    path('clientSignUp/', SignUpClientView.as_view(), name="client-create"),
-    # path('accounts/signup/', signup, name='signup'),
+    path('business-signUp/', SignUpBusinessView.as_view(), name="business_create"),
+    path('client-signUp/', SignUpClientView.as_view(), name="client_create"),
     path('accounts/', include("django.contrib.auth.urls")),
 ]

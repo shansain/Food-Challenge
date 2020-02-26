@@ -2,9 +2,26 @@
 
 {% block content %}
     <div class="challengePage">
-    <div class="containers">
-        <h2>{{ object.name }}</h2>
-        <p>Difficulty: {{ object.get_level_display }}</p>
-        <p class="description">{{ object.description }}</p>
-    </div>
+        <div class="containers">
+            <h2>{{ object.name }}</h2>
+            <p>Difficulty: {{ object.get_level_display }}</p>
+            <p class="description">{{ object.description }}</p>
+            {% if user.is_authenticated %}
+                {% if not in_challenge %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="START">
+                    </form>
+                {% else %}
+                    <p>you already in challenge</p>
+                {% endif %}
+            {% else %}
+
+                <a>please signup</a>
+                <a class="btn btn-signup " href="{% url 'client_create' %}">SIGNUP </a>
+                <a>or login</a>
+                <a class="btn btn-login" href="{% url 'login' %}">LOGIN</a>
+
+            {% endif %}
+        </div>
 {% endblock %}

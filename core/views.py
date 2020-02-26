@@ -1,3 +1,7 @@
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
+from .forms import NameForm
 from django.contrib import auth
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
@@ -6,12 +10,11 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import render, redirect
-from django.contrib.auth import logout
 from django.urls import reverse, reverse_lazy
 from django.views.generic import FormView
 
 from .forms import SignUpClientForm, SignUpBusinessForm
-from .models import Challenge, Client, Business
+from .models import Challenge, Client, Business, UserInChallenge
 
 
 def home(request):
@@ -20,7 +23,7 @@ def home(request):
     return render(request, 'core/home.html', d)
 
 
-@login_required
+# @login_required
 def search(request):
     q = request.GET.get('q')
     c = Challenge.objects.filter(Q(name__icontains=q) | Q(summary__icontains=q) | Q(description__icontains=q))
@@ -28,10 +31,20 @@ def search(request):
     return render(request, 'core/search.html', context)
 
 
-@login_required
+# @login_required
 def select(request, challenge_id):
     c = Challenge.objects.get(id=challenge_id)
-    context = {'object': c}
+    in_challenge = UserInChallenge.objects.filter(
+            client=request.user.client,
+            challenge_id=challenge_id
+        ).exists()
+    if request.method == 'POST':
+        UserInChallenge.objects.create(
+            client=request.user.client,
+            challenge_id=challenge_id
+        )
+        in_challenge = True
+    context = {'object': c, 'in_challenge': in_challenge}
     return render(request, 'core/challenge_page.html', context)
 
 
@@ -93,9 +106,9 @@ class SignUpBusinessView(FormView):
         return super(SignUpBusinessView, self).form_valid(form)
 
 
-def logout(request):
-    auth.logout(request)
-    return render(request, 'core/home.html')
+
+
+
 
 
 def admin_page(request):

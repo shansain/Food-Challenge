@@ -7,6 +7,13 @@
                 <h2>{{ c.name }}</h2>
                 <p>Difficulty: {{ c.get_level_display }}</p>
                 <p class="description">{{ c.description }}</p>
+                 {% if user.is_authenticated %}
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="START">
+                </form>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
