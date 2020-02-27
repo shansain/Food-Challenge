@@ -29,8 +29,9 @@ body, html {
     color: #591202;
 
 }
-.form-control{
-    background:#e0dede ;
+
+.form-control {
+    background: #e0dede;
 }
 
 .btn-home {
@@ -49,11 +50,14 @@ body, html {
 .kill-margin {
     margin-right: 0;
     margin-left: 0;
+    justify-content: center;
 }
+
 
 .card {
     padding: 0;
     background: #e0dede;
+    margin: 0 1rem 15px 1rem;
 }
 
 .card-title {
@@ -71,25 +75,45 @@ body, html {
 .description {
     width: 50vw;
 }
-.card:hover{
+
+.card:hover {
     box-shadow: 5px 5px #cd8965;
+
 }
 
-@media only screen and (min-width: 576px) {
-    .card-deck {
+@media only screen and(max-width: 576px) {
+    .row .kill-margin {
         display: flex;
+        flex-direction: column ;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
         width: 100vw;
     }
-    .card-deck .card{
-    margin-bottom: 15px;
+
+    .row .card .col-sm-12 .col-md-6 .col-lg-4 {
+        /*margin-bottom: 15px;*/
+        /*margin-left: 10px;*/
+        margin-right: 10px;
+    }
+
 }
-}
-/*@media only screen and (min-width: 768px) {*/
+
+/*@media only screen and (max-width: 576px) {*/
 /*    .card-deck {*/
 /*        display: flex;*/
+/*        justify-content: center;*/
+/*        align-items: center;*/
+/*        flex-direction: column;*/
+/*        width: 100vw;*/
+/*    }*/
+/*    .card-deck .card{*/
+/*    margin-bottom: 15px;*/
+/*}*/
+/*}*/
+/*@media only screen and (max-width: 768px) {*/
+/*    .card-deck {*/
+/*        display: flex;*/
+/*        font-size: 20rem;*/
 /*        justify-content: center;*/
 /*        align-items: center;*/
 /*        flex-direction: row;*/

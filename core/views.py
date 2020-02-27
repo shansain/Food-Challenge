@@ -125,6 +125,8 @@ def profile(request, client):
     challenge = UserInChallenge.objects.filter(client__user_id=client)
     return render(request, 'core/fixed_profile.html', {'client': Client.objects.get(user_id=client), 'challenge': challenge})
 
+def about_me(request):
+    return render(request, 'core/about_me.html')
 
 def admin_page(request):
     if not request.user.is_authenticated():

@@ -16,16 +16,17 @@
         </form>
 
         {#            <div class="row kill-margin ">#}
-        <div class="card-deck kill-margin">
+        <div class="row kill-margin">
             {% for c in object_list %}
-                <div class="card col-sm-12 col-md-6 col-lg-6">
+                <div class="card col-xs-12 col-sm-12 col-md-6 col-lg-4">
                 <div class="card-body">
                     <h5 class="card-title">{{ c.name }}</h5>
                     <p class="card-text">{{ c.summary }}.</p>
                     <p class="card-text"><small class="text-muted">Difficulty: {{ c.get_level_display }}</small></p>
-                    <a href="{% url 'select' c.id %}" class="card-link">for more </a>
+                    <a href="{% url 'select' c.id %}" class="card-link">for more information</a>
                 </div>
                 </div>
+
             {% endfor %}
             </div>
 
