@@ -24,22 +24,17 @@ def home(request):
 
 
 # @login_required
-def search(request, challenge_id):
+def search(request):
     q = request.GET.get('q')
     c = Challenge.objects.filter(Q(name__icontains=q) | Q(summary__icontains=q) | Q(description__icontains=q))
-    in_challenge = False
-    if request.user.is_authenticated:
-        in_challenge = UserInChallenge.objects.filter(
-            client=request.user.client,
-            challenge_id=challenge_id
-        ).exists()
-    if request.method == 'POST':
-        UserInChallenge.objects.create(
-            client=request.user.client,
-            challenge_id=challenge_id
-        )
-        in_challenge = True
-    context = {'object_list': c, 'in_challenge': in_challenge}
+    for n in c:
+        if request.user.is_authenticated:
+            n.in_challenge = UserInChallenge.objects.filter(
+                client=request.user.client,
+                challenge_id=n.id
+            ).exists()
+
+    context = {'object_list': c}
     return render(request, 'core/search.html', context)
 
 
@@ -67,10 +62,8 @@ def select(request, challenge_id):
         "Jerusalem Challenge",
         "The Shawarma Challenge",
     ]
-    context = {'object': c, 'in_challenge': in_challenge, 'challenge_list': challenge_list}
+    context = {'object': c, 'in_challenge': in_challenge}
     return render(request, 'core/challenge_page.html', context)
-
-
 
 
 class NoneLoginPermitted(AccessMixin):
@@ -129,7 +122,8 @@ class SignUpBusinessView(FormView):
 
 
 def profile(request, client):
-    return render(request, 'core/fixed_profile.html', {'client': client})
+    challenge = UserInChallenge.objects.filter(client__user_id=client)
+    return render(request, 'core/fixed_profile.html', {'client': Client.objects.get(user_id=client), 'challenge': challenge})
 
 
 def admin_page(request):

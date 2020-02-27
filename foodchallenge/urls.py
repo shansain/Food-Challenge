@@ -11,6 +11,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('business-signUp/', SignUpBusinessView.as_view(), name="business_create"),
     path('client-signUp/', SignUpClientView.as_view(), name="client_create"),
-    path('profile/<str:client>', views.profile, name="profile"),
+    path('profile/<int:client>', views.profile, name="profile"),
     path('accounts/', include("django.contrib.auth.urls")),
 ]

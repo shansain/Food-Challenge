@@ -1,9 +1,11 @@
 {% extends 'core/base.html' %}
 {% block content %}
 <div class="containers">
-
-    <h5>user name</h5>
-    <p>currently attending in {{ client }} challenges</p>
-    <p>information on the challenges </p>
+    <h5>{{ client.user.username }}</h5>
+    <p>Currently attending in {{ challenge|length }}  challenges</p>
+        <p>Yours challenges:</p>
+    {% for c in challenge %}
+        <p>{{ c.challenge.name }}  </p>
+    {% endfor %}
 </div>
 {% endblock %}
